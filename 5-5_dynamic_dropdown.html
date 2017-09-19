@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+  <title>動的にドロップダウンリストの要素を作る例</title>
+</head>
+<body>
+  <div class="container">
+    <!-- ドロップダウンリスト -->
+    <div class="dropdown" id="mydropdown">
+      <button type="button" class="btn btn-primay dropdown-toggle"
+        data-toggle="dropdown" data-target="#mydropdown" id="mylabel">
+        ドロップダウン
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="mylabel" id="menulist">
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+  // メニュー定義
+  var menus = ['メニュー1', 'メニュー2', 'メニュー3'];
+  var menu_selected = {};
+
+  $(function() {
+
+    // ドロップダウンリストが開かれようとするときのイベント
+    $('#mydropdown').on('show.bs.dropdown', function(e) {
+      var icon;
+      var ul = $('#menulist');
+      ul.empty();
+
+      // メニューを動的に作成する
+      $.each(menus, function(i) {
+        icon = '';
+        if (menu_selected[i]) {
+          icon = "<span class='glyphicon glyphicon-ok'></span>";
+        }
+
+        ul.append("<li role='presentation'><a href='#' data-index='" + i + "' tabindex='-1'>" + icon + this + "</a></li>");
+      });
+    });
+
+    // メニュー項目がクリックされたときのイベント
+    $('#menulist').on('click', function(e) {
+      var index = $(e.target).attr('data-index');
+      if (index !== undefined) {
+        menu_selected[index] = menu_selected[index] ? false : true;
+      }
+    });    
+  });
+  </script>
+</body>
+</html>
