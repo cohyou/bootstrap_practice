@@ -6,10 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
   <link rel="stylesheet" href="bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <link rel="stylesheet" href="jqeury-timepicker/jquery.timepicker.css">
+  <link rel="stylesheet" href="jquery-timepicker/jquery.timepicker.css">
   <title>title</title>
 </head>
 <body>
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">ライブ情報管理システム</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="active"><a href="#">ライブ情報管理</a></li>
+        <li><a href="#">出演者管理</a></li>
+        <li><a href="#">ライブハウス管理</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">設定</a></li>
+      </ul>
+    </div>
+
+  </nav>
+
   <div class="container">
     <!--
     datef
@@ -60,46 +79,40 @@
 
     <div class="form-group">
       <label for="comment" class="control-label col-sm-2">コメント</label>
-      <textarea id="comment"
-      cols="40" rows="5"
-      placeholder="ライブの詳細など" class="form-control"></textarea>
-      <p class="help-block">※1000文字まで入力できます。</p>
-    </div>
-
-    <div class="form-group">
-      <label for="open-time" class="control-label col-sm-2">開場時刻</label>
-      <div class="col-sm-2">
-        <input id="open-time" type="time" placeholder="開場時刻" class="form-control">
+      <div class="col-sm-5">
+        <textarea id="comment" rows="5" placeholder="ライブの詳細など" class="form-control"></textarea>
+        <p class="help-block">※1000文字まで入力できます。</p>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="open-time" class="control-label col-sm-2">開演時刻</label>
-      <div class="col-sm-2">
-        <input id="start-time" type="time" placeholder="開演時刻" class="form-control">
+      <label class="control-label col-sm-2">開場時刻</label>
+      <div class="col-sm-1">
+        <input id="open-time" type="text" class="form-control" data-time-format="H:i">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2">開演時刻</label>
+      <div class="col-sm-1">
+        <input id="start-time" type="text" class="form-control" data-time-format="H:i">
       </div>
     </div>
 
     <div class="form-group">
       <label for="advance-fee" class="control-label col-sm-2">前売料金</label>
-      <div class="col-sm-3">
-        <input id="advance-fee" type="text" placeholder="前売料金" class="form-control">
+      <div class="col-sm-1">
+        <input id="advance-fee" type="text" class="form-control" value="2000">
       </div>
     </div>
 
     <div class="form-group">
       <label for="door-fee" class="control-label col-sm-2">当日料金</label>
-      <div class="col-sm-3">
-        <input id="door-fee" type="text" placeholder="当日料金" class="form-control">
+      <div class="col-sm-1">
+        <input id="door-fee" type="text" class="form-control" value="2500">
       </div>
     </div>
 
-    <div id="time-test" class="form-group some-time-inputs">
-      <label class="control-label col-sm-2">時刻テスト</label>
-      <div class="col-sm-3">
-        <input type="text" class="form-control" data-time-format="H:i:s">
-      </div>
-    </div>
   </form>
 </div>
 
@@ -108,7 +121,7 @@
 <script src="https://use.fontawesome.com/f809cfaef5.js"></script>
 <script src="bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <script src="bootstrap-datepicker/dist/locales/bootstrap-datepicker.ja.min.js"></script>
-<script src="jqeury-timepicker/jquery.timepicker.min.js"></script>
+<script src="jquery-timepicker/jquery.timepicker.min.js"></script>
 <script>
 $(function(){
     // Default
@@ -117,7 +130,9 @@ $(function(){
         language: 'ja'
     });
 
-    $('#time-test .some-time-inputs').timepicker({});
+    $('#open-time').timepicker({ scrollDefault: '18:00'});
+    $('#start-time').timepicker({ scrollDefault: '18:30'});
+});
 });
 </script>
 </body>
