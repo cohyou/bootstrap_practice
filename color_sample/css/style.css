@@ -1,0 +1,52 @@
+.header {
+  width: 768px;
+  height: 64px;
+}
+
+.wrapper {
+  width: 970px;
+  margin: auto;
+}
+
+.sidemenu {
+  float: left;
+  width: 200px;
+}
+
+.main {
+  display: block;
+  float: right;
+  width: 768px;
+}
+
+
+.footer {
+  width: 100%;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+body {
+  background-color: #ddd;
+}
+
+.header, .sidemenu, .footer {
+  border: 0px solid #aaa;
+  background-color: #ccc;
+}
+
+.header {
+  height: 60px;
+}
+
+.sidemenu {
+  height: 100%;
+}
+
+.main {
+  height: 660px;
+}

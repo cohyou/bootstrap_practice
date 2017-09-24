@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>配色</title>
+</head>
+<body>
+  <div class="wrapper clearfix">
+    <div id="sidemenu" class="sidemenu">
+    </div>
+    <main>
+      <div id="header" class="header"></div>
+      <div id="main" class="main"></div>
+    </main>
+  </div>
+  <footer class="footer">
+  </footer>
+  <script>
+  function randomByte() {
+    return Math.floor(Math.random() * 256) - 1;
+  }
+
+  function rgb(r, g, b) {
+    return '#' + r.toString(16) + g.toString(16) + b.toString(16);
+  }
+
+  function setColor(header_c, sidemenu_c, main_c) {
+    document.getElementById('header').style.backgroundColor = header_c;
+    document.getElementById('sidemenu').style.backgroundColor = sidemenu_c;
+    document.getElementById('main').style.backgroundColor = main_c;
+  }
+
+  // setColor(rgb(randomByte(), randomByte(), randomByte()), 'red');
+
+  // アクティブ1
+  // setColor(rgb(50, 18, 133), rgb(127, 204, 167), rgb(255, 242, 149));
+
+  // アクティブ2
+  // setColor(rgb(32, 83, 143), rgb(127, 193, 163), rgb(254, 230, 170));
+
+  // アクティブ3
+  // setColor(rgb(127, 193, 163), rgb(32, 83, 143), rgb(254, 230, 170));
+
+  // モダン1
+  // setColor(rgb(107, 128, 103), rgb(163, 171, 186), rgb(230, 230, 230));
+
+  // モダン2 ヘッダだけ変更
+  // setColor(rgb(132, 98, 124), rgb(163, 171, 186), rgb(230, 230, 230));
+
+  // モダン3 ヘッダとサイドを入れ替える
+  // setColor(rgb(163, 171, 186), rgb(132, 98, 124), rgb(230, 230, 230));
+
+  // 秋の感じ
+  // setColor(rgb(108, 144, 139), rgb(204, 194, 189), rgb(230, 218, 213));
+
+  // 都会的洗練1
+  // setColor(rgb(137, 118, 128), rgb(149, 149, 135), rgb(203, 212, 199));
+
+  // 都会的洗練2
+  // setColor(rgb(127, 127, 127), rgb(138, 136, 139), rgb(203, 213, 210));
+
+  // 都会的洗練3 メインをもう少し白っぽく
+  setColor(rgb(127, 127, 127), rgb(138, 136, 139), rgb(216, 217, 212));
+
+  // 都会的洗練4 メインをさらに別の色に
+  // setColor(rgb(127, 127, 127), rgb(138, 136, 139), rgb(204, 224, 215));
+
+  // 管理画面を元に
+  setColor('#FFF', '#353f4f', rgb(238, 239, 243));
+
+  </script>
+</body>
+</html>
