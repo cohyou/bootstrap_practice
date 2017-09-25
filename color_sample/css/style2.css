@@ -1,0 +1,121 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+body {
+  width: 960px;
+  height: calc(816px + 10px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidemenu {
+  float: left;
+  width: 192px;
+  height: 100%;
+
+  /* background-color: #455060; */
+  /* background-color: #424f63; */
+  /* background-color: #353F4F; */
+
+  background: linear-gradient(#55667F, #424f63);
+}
+
+.wrapper {
+  float: left;
+  width: calc(100% - 192px);
+  height: 100%;
+}
+
+.header {
+  height: 52px;
+  background-color: #F7F7F7;
+  border-bottom: 2px solid #FFA723;
+}
+
+.header-edit {
+  height: 54px;
+}
+
+.main {
+  width: 100%;
+  height: calc(816px + 10px - 52px);
+
+  background-color: #F0F0F0;
+
+  font-weight: lighter;
+}
+
+.control-label {
+  color: #555;
+}
+
+#calendar {
+  float: left;
+  width: 720px;
+  height: inherit;
+  margin-left: 24px;
+  font-family: "Mplus 1p", 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ';
+  color: #555;
+  padding-top: 96px;
+}
+
+.top {
+  width: 100%;
+  height: 54px;
+  background-color: #FFAF38;
+}
+
+.nav ul li {
+  list-style: none;
+  list-style-position: inside;
+  color: #CCC;
+  font-size: large;
+  font-family: 'Noto Sans JP', "Mplus 1p", 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ';
+  font-weight: bold;
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  /*padding-left: 24px;*/
+  border-bottom: 1px solid #BBB;
+  background-color: #465468;
+}
+
+.nav ul li a {
+  padding-left: 4px;
+  border-left: 4px solid #FFA723;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #DDD;
+}
+
+a:visited {
+  color: #AAA;
+}
+
+.login {
+  float: right;
+  margin: 6px;
+  width: 44px;
+  height: 44px;
+  background-color: white;
+  background-image: url(../images/icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 32px;
+}
+
+.main-edit {
+  padding-top: 96px;
+  font-family: 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ';
+  height: calc(960px - 188px);
+}
+
+.clearfix::after {
+  content: '',attr();
+  display: block;
+  clear: both;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="../bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="../jquery-timepicker/jquery.timepicker.css">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style2.css">
+  <title>ライブ情報の編集</title>
+</head>
+<body>
+  <div class="sidemenu">
+    <div class="top"></div>
+    <div class="nav">
+      <ul>
+        <li><a href="#">ライブカレンダー</a></li>
+        <li>出演者一覧</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrapper">
+    <header class="header header-edit">
+      <div class="login"></div>
+    </header>
+    <main class="main main-edit">
+      <div class="container">
+        <form method="post" class="form-horizontal">
+
+          <div class="form-group" id="datepicker-default">
+            <label for="datef" class="col-sm-2 control-label">日付</label>
+            <div class="col-sm-2 form-inline">
+              <div class="input-group date">
+                <input id="datef" type="text" class="form-control" value="2017-09-25">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="presents" class="control-label col-sm-2">主催</label>
+            <div class="col-sm-5">
+              <input id="presents" type="text" placeholder="主催" class="form-control" value="ASR Records">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="title" class="control-label col-sm-2">タイトル</label>
+            <div class="col-sm-5">
+              <input id="title" type="text" placeholder="タイトル" class="form-control" value="オーバーな月曜日でオーバーザ月曜日">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subtitle" class="control-label col-sm-2">サブタイトル</label>
+            <div class="col-sm-5">
+              <input id="subtitle" type="text" placeholder="サブタイトル" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="comment" class="control-label col-sm-2">コメント</label>
+            <div class="col-sm-5">
+              <textarea id="comment" rows="5" placeholder="ライブの詳細など" class="form-control">楽しい週末が終わっちゃったよー、なんて思っておるじゃろ？そんなお主らに朗報じゃ！カッコいいロックバンドしかいない過積載な月曜日がある。これで新しい秋も乗り越えていけるんじゃよ。待っておるぞい。フォッフォッフォッ。</textarea>
+              <p class="help-block">※1000文字まで入力できます。</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2">開場時刻</label>
+            <div class="col-sm-1">
+              <input id="open-time" type="text" class="form-control" data-time-format="H:i" value="18:30">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2">開演時刻</label>
+            <div class="col-sm-1">
+              <input id="start-time" type="text" class="form-control" data-time-format="H:i" value="19:00">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="advance-fee" class="control-label col-sm-2">前売料金</label>
+            <div class="col-sm-1">
+              <input id="advance-fee" type="text" class="form-control" value="2000">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="door-fee" class="control-label col-sm-2">当日料金</label>
+            <div class="col-sm-1">
+              <input id="door-fee" type="text" class="form-control" value="2500">
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/f809cfaef5.js"></script>
+  <script src="../bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <script src="../bootstrap-datepicker/dist/locales/bootstrap-datepicker.ja.min.js"></script>
+  <script src="../jquery-timepicker/jquery.timepicker.min.js"></script>
+  <script>
+  $(function(){
+      // Default
+      $('#datepicker-default .date').datepicker({
+          format: "yyyy-mm-dd",
+          language: 'ja',
+          orientation: 'bottom'
+      });
+
+      $('#open-time').timepicker({ scrollDefault: '18:00'});
+      $('#start-time').timepicker({ scrollDefault: '18:30'});
+  });
+  </script>
+</body>
+</html>

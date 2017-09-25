@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='../node_modules/fullcalendar/dist/fullcalendar.css' />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style2.css" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css"/>
+
+  <title>ライブカレンダー</title>
+</head>
+<body>
+  <div class="sidemenu">
+    <div class="top"></div>
+    <div class="nav">
+      <ul>
+        <li><a href="#">ライブカレンダー</a></li>
+        <li>出演者一覧</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrapper">
+    <header class="header">
+      <div class="login"></div>
+    </header>
+    <main class="main clearfix">
+      <div id='calendar'></div>
+    </main>
+  </div>
+
+  <script src='../node_modules/jquery/dist/jquery.min.js'></script>
+  <script src='../node_modules/moment/min/moment.min.js'></script>
+  <script src='../node_modules/fullcalendar/dist/fullcalendar.js'></script>
+  <script>
+  $(document).ready(function() {
+    var live_infos = [
+      { date: '2017-09-01', title: '輝くたてがみ', color: '#666' },
+      { date: '2017-09-02', title: '「3markets', color: '#666' },
+      { date: '2017-09-03', title: 'SOULMATE', color: '#996' },
+      { date: '2017-09-04', title: 'チキチキ！', color: '#666' },
+      { date: '2017-09-05', title: 'MEET HEAT', color: '#933' },
+      { date: '2017-09-06', title: 'オトノブンガク', color: '#369' },
+      { date: '2017-09-07', title: 'Attack on Memory', color: '#666' },
+      { date: '2017-09-08', title: 'MEET HEAT', color: '#933' },
+      { date: '2017-09-09', title: 'MEET HEAT', color: '#933' },
+      { date: '2017-09-10', title: 'HOPES', color: '#996' },
+      { date: '2017-09-11', title: 'The cold tommy', color: '#666' },
+      { date: '2017-09-12', title: 'Sams 2nd EP', color: '#666' },
+      { date: '2017-09-13', title: 'ドミノ倒し', color: '#666' },
+      { date: '2017-09-14', title: 'オトノブンガク', color: '#369' },
+      { date: '2017-09-15', title: 'ベアフットエイジーズ', color: '#666' },
+      { date: '2017-09-16', title: 'sankanshion', color: '#666' },
+      { date: '2017-09-17', title: '猛烈！天王寺', color: '#996' },
+      { date: '2017-09-18', title: 'Parfect Sunset', color: '#996' },
+      { date: '2017-09-19', title: 'MEET HEAT', color: '#666' },
+      { date: '2017-09-20', title: '歌う魚開店デスマッチ', color: '#996' },
+      { date: '2017-09-21', title: 'オトノブンガク', color: '#369' },
+      { date: '2017-09-22', title: 'Strawberry Garden', color: '#666' },
+      { date: '2017-09-23', title: 'レッドアースと', color: '#933' },
+      { date: '2017-09-24', title: 'せいになるか、おかげになるか', color: '#666' },
+      { date: '2017-09-25', title: 'オーバーな', color: '#666' },
+      { date: '2017-09-26', title: 'MEET HEAT', color: '#933' },
+      { date: '2017-09-27', title: 'オトノブンガク', color: '#369' },
+      { date: '2017-09-28', title: 'HAGANE DRIVE SPECIAL', color: '#996' },
+      { date: '2017-09-29', title: 'オトノブンガク', color: '#369' },
+      { date: '2017-09-30', title: '愛のバクダン', color: '#666' },
+    ];
+
+    events = [];
+    for (var i in live_infos) {
+      var live_info = live_infos[i];
+      var e = {
+        title: live_info.title,
+        start: live_info.date+'T18:00:00',
+        allday: false,
+        color: live_info.color
+      };
+      events.push(e);
+    }
+
+    $('#calendar').fullCalendar({ events: events, displayEventTime: false });
+  });
+  </script>
+</body>
+</html>
