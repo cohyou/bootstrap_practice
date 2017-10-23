@@ -17,7 +17,7 @@ origin  https://github.com/cohyou/bootstrap_practice (push)
 ```
 
 さらに、bootstrap-calendarというライブラリを使っているが、marginなど、form用に直接修正している。これはそもそもどうしましょうかね。submodule扱いなので、新しくforkしないといけないのでしょうか。
-```
+```Diff
 diff --git a/dist/css/bootstrap-datepicker.css b/dist/css/bootstrap-datepicker.css
 index 3cc60cd..e7b7aa9 100644
 --- a/dist/css/bootstrap-datepicker.css
